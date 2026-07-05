@@ -1,0 +1,63 @@
+{
+  "siteInfo": {
+    "websiteName": "Brownfield Green Ammonia Energy System",
+    "organizationName": "Brownfield Green Energy Solutions",
+    "systemStatus": "Online",
+    "lastUpdated": "2026-07-05 15:45"
+  },
+
+  "dashboard": {
+    "powerOutput": "1250 kW",
+    "efficiency": "92%",
+    "carbonReduction": "340 tons",
+    "waterQuality": "82 / 100",
+    "communityImpact": "Equivalent to removing 340 cars from the road"
+  },
+
+  "outreach": {
+    "norway": {
+      "name": "Norway — Herøya Industrial Park",
+      "info": "World’s leading brownfield green ammonia retrofit integrating renewable hydrogen.",
+      "progress": 75
+    },
+    "sriLanka": {
+      "name": "Sri Lanka — Emerging Pilot Region",
+      "info": "Strong solar potential makes it ideal for renewable-powered ammonia production.",
+      "progress": 40
+    },
+    "kenya": {
+      "name": "Kenya — East African Development Hub",
+      "info": "Agricultural demand and industrial growth drive need for sustainable ammonia.",
+      "progress": 55
+    },
+    "puertoRico": {
+      "name": "Puerto Rico — Caribbean Pilot Site",
+      "info": "Grid instability highlights need for resilient ammonia-powered microgrids.",
+      "progress": 30
+    }
+  },
+
+  "about": {
+    "mission": "Provide a sustainable future through energy literacy and green ammonia innovation.",
+    "vision": "Empower communities to understand and benefit from renewable energy systems.",
+    "goals": [
+      "Promote energy literacy and awareness in the community.",
+      "Provide clear and transparent diagnostics of the energy system.",
+      "Educate the community on the real-world effects of the energy system.",
+      "Encourage community engagement and participation in energy-related initiatives."
+    ],
+    "timeline": [
+      { "year": "2022", "event": "Initial research and feasibility studies" },
+      { "year": "2023", "event": "Pilot osmotic energy systems deployed" },
+      { "year": "2024", "event": "Community education programs launched" },
+      { "year": "2025", "event": "Expanded environmental monitoring network" },
+      { "year": "2026+", "event": "Scaling renewable projects globally" }
+    ],
+    "partners": [
+      "University of Oslo",
+      "Kenya Renewable Alliance",
+      "Sri Lanka Solar Initiative",
+      "Caribbean Energy Council"
+    ]
+  }
+}

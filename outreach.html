@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Brownfield Green Energy Solutions | Outreach Page -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outreach | Brownfield Green Energy Solutions</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .outreach-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .outreach-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 6px;
+      background: #f9f9f9;
+    }
+    #mapContainer {
+      margin: 2rem 0;
+      text-align: center;
+      position: relative;
+    }
+    #worldMap {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border: 1px solid #ddd;
+      margin: 1rem auto;
+    }
+    /* Tooltip styling */
+    .tooltip {
+      position: absolute;
+      background: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    /* Animated hover effects */
+    #worldMap circle {
+      transition: transform 0.3s ease, fill 0.3s ease;
+    }
+    #worldMap circle:hover {
+      transform: scale(1.5);
+      animation: pulse 1s infinite;
+      cursor: pointer;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+    #timeline ul {
+      list-style: none;
+      padding: 0;
+    }
+    #timeline li {
+      margin: 0.5rem 0;
+    }
+    .year {
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+    #extraInfo {
+      margin-top: 1.5rem;
+      font-style: italic;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <header id="nav-container"></header>
+  <button id="nav-toggle" aria-label="Toggle Navigation">☰</button>
+  <div id="nav-overlay"></div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section id="outreach">
+      <div class="outreach-container">
+        <h2>Global Outreach & Development Sites</h2>
+
+        <p class="intro">
+          Green ammonia is already being deployed worldwide. Norway leads with a successful brownfield retrofit,
+          while Sri Lanka, Kenya, and Puerto Rico stand out as promising pilot development sites.
+        </p>
+
+        <!-- Interactive World Map -->
+        <div id="mapContainer">
+          <h3>Interactive World Map</h3>
+          <svg id="worldMap" viewBox="0 0 800 400">
+            <circle id="norway" cx="480" cy="80" r="10" fill="#0077cc" />
+            <circle id="sriLanka" cx="600" cy="220" r="10" fill="#ff9933" />
+            <circle id="kenya" cx="570" cy="200" r="10" fill="#33cc33" />
+            <circle id="puertoRico" cx="250" cy="150" r="10" fill="#cc3333" />
+          </svg>
+          <p class="map-note">Hover or click highlighted regions to learn more.</p>
+          <div id="tooltip" class="tooltip"></div>
+        </div>
+
+        <!-- Outreach Cards -->
+        <div class="outreach-cards">
+          <div class="card" id="norwayCard">
+            <h3>Norway — Herøya Industrial Park</h3>
+            <p>Norway operates one of the world’s first brownfield green ammonia retrofits.</p>
+            <button class="infoBtn" data-site="norway">More Info</button>
+          </div>
+          <div class="card" id="sriLankaCard">
+            <h3>Sri Lanka — Emerging Pilot Region</h3>
+            <p>Sri Lanka’s strong solar potential makes it ideal for renewable-powered ammonia production.</p>
+            <button class="infoBtn" data-site="sriLanka">More Info</button>
+          </div>
+          <div class="card" id="kenyaCard">
+            <h3>Kenya — East African Development Hub</h3>
+            <p>Kenya’s agricultural demand and industrial growth make it a prime candidate for green ammonia.</p>
+            <button class="infoBtn" data-site="kenya">More Info</button>
+          </div>
+          <div class="card" id="puertoRicoCard">
+            <h3>Puerto Rico — Caribbean Pilot Site</h3>
+            <p>Puerto Rico’s grid instability highlights the need for resilient ammonia-powered microgrids.</p>
+            <button class="infoBtn" data-site="puertoRico">More Info</button>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div id="timeline">
+          <h3>Global Adoption Timeline</h3>
+          <ul>
+            <li><span class="year">2022</span> — Norway launches Herøya retrofit</li>
+            <li><span class="year">2024</span> — Pilot projects proposed in Sri Lanka & Kenya</li>
+            <li><span class="year">2025</span> — Puerto Rico begins microgrid feasibility studies</li>
+            <li><span class="year">2026+</span> — Expansion into wider Caribbean and East Africa</li>
+          </ul>
+        </div>
+
+        <p id="extraInfo"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <p>&copy; <span id="footer-year"></span> Brownfield Green Energy Solutions. All Rights Reserved.</p>
+  </footer>
+
+  <!-- OUTREACH SCRIPT -->
+  <script>
+    // Footer year
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("footer-year").textContent = new Date().getFullYear();
+    });
+
+    // Info content for each site
+    const siteInfo = {
+      norway: "Norway’s Herøya Industrial Park demonstrates how existing ammonia plants can be retrofitted with renewable hydrogen.",
+      sriLanka: "Sri Lanka’s solar potential positions it as a strong candidate for renewable ammonia pilot projects.",
+      kenya: "Kenya’s agricultural and industrial growth drive demand for sustainable ammonia solutions.",
+      puertoRico: "Puerto Rico’s grid challenges highlight the role of ammonia-powered microgrids in resilience."
+    };
+
+    // Show info in extraInfo
+    function showInfo(site) {
+      document.getElementById("extraInfo").textContent = siteInfo[site] || "";
+    }
+
+    // Click events
+    document.querySelectorAll(".infoBtn").forEach(btn => {
+      btn.addEventListener("click", () => showInfo(btn.dataset.site));
+    });
+    document.querySelectorAll("#worldMap circle").forEach(region => {
+      region.addEventListener("click", () => showInfo(region.id));
+    });
+
+    // Hover tooltip
+    const tooltip = document.getElementById("tooltip");
+    document.querySelectorAll("#worldMap circle").forEach(region => {
+      region.addEventListener("mousemove", (e) => {
+        tooltip.textContent = region.id;
+        tooltip.style.left = e.pageX + 10 + "px";
+        tooltip.style.top = e.pageY + 10 + "px";
+        tooltip.style.opacity = 1;
+      });
+      region.addEventListener("mouseleave", () => {
+        tooltip.style.opacity = 0;
+      });
+    });
+  </script>
+</body>
+</html>

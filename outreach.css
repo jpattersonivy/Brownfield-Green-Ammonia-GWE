@@ -1,0 +1,62 @@
+/* Outreach Cards */
+.outreach-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 6px;
+  background: #f9f9f9;
+  position: relative;
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-bar-fill {
+  height: 20px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  font-size: 0.8rem;
+  transition: width 0.5s ease;
+}
+
+/* Map hover animation */
+#worldMap circle {
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+#worldMap circle:hover {
+  transform: scale(1.5);
+  animation: pulse 1s infinite;
+  cursor: pointer;
+}
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Tooltip styling */
+.tooltip {
+  position: absolute;
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}

@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* NAV */
+.nav-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-list a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* MOBILE */
+#nav-toggle {
+    display: none;
+    font-size: 28px;
+}
+
+#nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+
+    #nav-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 20px;
+        transition: 0.3s;
+    }
+
+    .main-nav.open .nav-list {
+        right: 0;
+    }
+
+    #nav-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+}
+
+#about {
+    background: #eef6ff;
+}
+#about .card {
+    border-left: 5px solid #0077cc;
+}
+
+#data {
+    background: #fffbe6;
+}
+#data .chart-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#research {
+    background: #f0fff0;
+}
+#research .highlight {
+    background: #e0f7e9;
+    padding: 15px;
+    border-radius: 6px;
+}
+

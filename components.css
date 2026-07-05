@@ -1,0 +1,160 @@
+/* CSS Styles for the Osmotic Energy Monitoring System */
+/* This file contains the styles for the user interface of the system, including layout, colors, fonts, and responsive design. */
+/* The styles are designed to provide a clean and user-friendly experience for users accessing the system on various devices. */
+/* The styles are also organized to allow for user accessiblity & ease when navigating the program to promote 'energy literacy' and 'energy awareness' for the users. */
+
+/* RESET */
+
+/* VARIABLES */
+
+/* GLOBAL STYLES */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    padding: 20px;
+}
+
+/* NAVIGATION BAR */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* HERO SECTION */
+.hero {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+/* ABOUT PAGE */
+
+/* MONITORING PAGE */
+
+/* STATIONS PAGE */
+
+/* RESEARCH PAGE */
+
+/* CONTRIBUTION PAGE */
+
+/* CONTACT PAGE */
+
+/* FOOTER */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* MEDIA QUERIES */
+body {
+    font-size: 18px;
+}
+.hero h1 {
+    font-size: 52px;
+}
+/* Additional styles for responsiveness can be added here */
+/* Large Tablets (1024px and below) */
+@media screen and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    nav {
+        padding: 15px 20px;
+    }
+}
+
+/* Tablets (768px and below) */
+@media screen and (max-width: 768px) {
+    nav { 
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .hero {
+        height: auto;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+
+/* Mobile Devices (480px and below) */
+@media screen and (max-width: 480px) {
+    
+    body {
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
+
